@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <title>best2pay</title>
     <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="./js/jquery.validate.js"></script>
+    <script src="./js/jquery.mask.js"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,27 +19,36 @@
 
 <body>
     <div class="layout wrapper">
-        <form action="">
+        <form id="cardForm" class="form_submit" action="#">
             <div class="form">
                 <img class="form__logo" src="./img/logo.svg" alt="logo">
-                <div class="form__item form-item">
-                    <label class="form-item__label">Номер карты</label>
-                    <input class="form-item__input" type="text" placeholder="1234 5678 1234 5678">
-                    <div class="form-item__error hidden">
-                        Неверный номер карты</div>
+                <div class="form__item form-item form-item-card">
+                    <label class="form-item__label" for="cardnumber">Номер карты</label>
+                    <input class="form-item__input cardnumber" id="cardnumber" name="cardnumber"
+                        placeholder="1234 5678 1234 5678">
+                    <div class="form-item__error wrapperError">
+                        <div class="hidden">Неверный номер карты</div>
+                    </div>
                 </div>
                 <div class="form-item-group-short">
-                    <div class="form__item form-item form-item_short">
-                        <label class="form-item__label">Месяц / год</label>
-                        <input class="form-item__input" type="text" placeholder="ММ / ГГ">
-                        <div class="form-item__error hidden">
-                            Неверный формат <br />
-                            MM/YY</div>
+                    <div class="form__item form-item form-item_short form-item-date">
+                        <label class="form-item__label" for="date">Месяц / год</label>
+                        <input class="form-item__input date" placeholder="ММ / ГГ" name="date" id="date">
+                        <div class="form-item__error form-item__error_date">
+                            <div class="hidden">Неверный формат <br />
+                                MM/YY</div>
+                        </div>
                     </div>
-                    <div class="form__item form-item form-item_short">
-                        <label class="form-item__label">CVV / CVC <span class="icon-question"></span></label>
-                        <input class="form-item__input" type="number" placeholder="123">
-                        <div class="form-item__error hidden">Поле обязательно</div>
+                    <div class="form__item form-item form-item_short form-item-cvc">
+                        <label class="form-item__label" for="cvc">CVV / CVC <span class="icon-question tooltip">
+                                <span class="tooltip-text tooltip-top">
+                                    Три цифры с обратной стороны карты
+                                </span>
+                            </span></label>
+                        <input class="form-item__input cvc" placeholder="123" name="cvc" id="cvc">
+                        <div class="form-item__error wrapperError">
+                            <div class="hidden">Поле обязательно</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,7 +56,7 @@
                 <input type="checkbox" class="save-checkbox" id="save" name="save" value="yes">
                 <label for="save">Сохранить карту для следующих покупок</label>
             </div>
-            <button class="btn" type="button">Оплатить</button>
+            <button class="btn form_submiter" type="submit" disabled>Оплатить</button>
             <div class="text-offert">Нажимая на кнопку «‎Перевести»‎,
                 вы соглашаетесь с
                 <a href="#">условиями оферты</a>
@@ -66,7 +76,19 @@
             </div>
             <div class="footer-content__order">Заказ №112480</div>
         </div>
+
     </footer>
+    <div class="custom-tooltip">
+        <div class="custom-tooltip__title">Success</div>
+        <ul>
+            <li><b>Card Number:</b> <span></span></li>
+            <li><b>Date:</b> <span></span></li>
+            <li><b>CVC:</b> <span></span></li>
+        </ul>
+    </div>
+    <script>
+
+    </script>
 </body>
 
 </html>
