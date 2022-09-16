@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>best2pay</title>
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="layout wrapper">
+        <form action="">
+            <div class="form">
+                <img class="form__logo" src="./img/logo.svg" alt="logo">
+                <div class="form__item form-item">
+                    <label class="form-item__label">Номер карты</label>
+                    <input class="form-item__input" type="text" placeholder="1234 5678 1234 5678">
+                    <div class="form-item__error hidden">
+                        Неверный номер карты</div>
+                </div>
+                <div class="form-item-group-short">
+                    <div class="form__item form-item form-item_short">
+                        <label class="form-item__label">Месяц / год</label>
+                        <input class="form-item__input" type="text" placeholder="ММ / ГГ">
+                        <div class="form-item__error hidden">
+                            Неверный формат <br />
+                            MM/YY</div>
+                    </div>
+                    <div class="form__item form-item form-item_short">
+                        <label class="form-item__label">CVV / CVC <span class="icon-question"></span></label>
+                        <input class="form-item__input" type="number" placeholder="123">
+                        <div class="form-item__error hidden">Поле обязательно</div>
+                    </div>
+                </div>
+            </div>
+            <div class="save-section">
+                <input type="checkbox" class="save-checkbox" id="save" name="save" value="yes">
+                <label for="save">Сохранить карту для следующих покупок</label>
+            </div>
+            <button class="btn" type="button">Оплатить</button>
+            <div class="text-offert">Нажимая на кнопку «‎Перевести»‎,
+                вы соглашаетесь с
+                <a href="#">условиями оферты</a>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="layout footer-content">
+            <div class="footer-content__logo">
+                <img src="./img/visa.svg" alt="visa">
+                <img src="./img/mc.svg" alt="mc">
+                <img src="./img/mir.svg" alt="mir">
+            </div>
+            <div class="footer-content__text">
+                Данные банковской карты будут
+                переданы в зашифрованном виде
+            </div>
+            <div class="footer-content__order">Заказ №112480</div>
+        </div>
+    </footer>
+</body>
+
+</html>
